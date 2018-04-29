@@ -33,4 +33,6 @@
 
 *.vcxproj*
 
-\.vs\
+Browse.VC.db
+
+.suo
