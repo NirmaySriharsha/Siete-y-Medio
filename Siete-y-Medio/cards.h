@@ -43,6 +43,7 @@ public:
 	// Compare rank of two cards. E.g: Eight<Jack is true.
 	// Assume Ace is always 1. 
 	// Useful if you want to sort the cards.
+	double get_value() const;
 	bool operator < (Card card2) const;
 	friend std::ostream& operator<<(std::ostream&, const Card&);
 
@@ -56,13 +57,14 @@ class Hand {
 public:
 	Hand();
 	void draw_card();
-	int get_total() const;
+	double get_total() const;
 	Card& operator[] (int);
 	void print_out_hand();
 	Card& last_card();
+	void reset_hand();
 private:
 	vector<Card> current_hand;
-	int total;
+	double total;
 };
 
 
@@ -71,6 +73,7 @@ public:
 	Player(int m);
 	int get_money() const;
 	Hand player_hand;
+	void add_money(const int&);
 private:
 	int money;
 };

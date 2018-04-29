@@ -156,13 +156,25 @@ string Card::get_english_rank() const {
 int Card::get_rank() const {
 	return static_cast<int>(rank) + 1;
 }
+
+double Card::get_value() const {
+	if ((*this).get_rank() < 10)
+	{
+		return (*this).get_rank();
+	}
+	else
+		return 0.5;
+}
+
+
 // Comparison operator for cards
 bool Card::operator < (Card card2) const {
 	return rank < card2.rank;
 }
 
 std::ostream& operator<<(std::ostream& out, const Card& x) {
-	out << "			" << x.get_spanish_suit() << " of " << x.get_spanish_rank() << "			(" << x.get_english_suit() << " of " << x.get_english_rank();
+	out << "			" << x.get_spanish_suit() << " of " << x.get_spanish_rank() << "			(" << x.get_english_suit() << " of " << x.get_english_rank() << ")";
+	return out;
 }
 
 /* *************************************************
@@ -175,10 +187,10 @@ Hand::Hand() : total(0) {
 void Hand::draw_card(){
 	Card newcard;
 	current_hand.push_back(newcard);
-	total += newcard.get_rank();
+	total += newcard.get_value();
 }
 
-int Hand::get_total() const {
+double Hand::get_total() const {
 	return total;
 }
 
@@ -187,7 +199,6 @@ Card& Hand::operator[] (int position) {
 }
 
 void Hand::print_out_hand() {
-	cout << "Your cards: " << endl;
 	for (int i = 0; i < current_hand.size(); i++)
 	{
 		cout << current_hand[i] << endl;
@@ -196,6 +207,11 @@ void Hand::print_out_hand() {
 
 Card& Hand::last_card() {
 	return current_hand[current_hand.size() - 1];
+}
+
+void Hand::reset_hand() {
+	current_hand = {};
+	total = 0;
 }
 
 /* *************************************************
@@ -209,3 +225,6 @@ int Player::get_money() const {
 	return money;
 }
 
+void Player::add_money(const int& bet) {
+	money += bet;
+}
