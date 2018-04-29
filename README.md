@@ -11,4 +11,6 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 3. 14th April- The third commit involved filling out the three classes as much as possible for the time being. No testing has begun as of yet. 
 
+4. 17th April- Finished the game interface for the player's turn. Certain exceptional cases haven't been accounted for (for example, when the player draws after he busts, etc). 
+
 

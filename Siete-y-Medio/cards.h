@@ -59,6 +59,7 @@ public:
 	int get_total() const;
 	Card& operator[] (int);
 	void print_out_hand();
+	Card& last_card();
 private:
 	vector<Card> current_hand;
 	int total;
@@ -67,11 +68,10 @@ private:
 
 class Player {
 public:
-	// Constructor. 
-	//    Assigns initial amount of money
 	Player(int m);
-private:
+	int get_money() const;
 	Hand player_hand;
+private:
 	int money;
 };
 

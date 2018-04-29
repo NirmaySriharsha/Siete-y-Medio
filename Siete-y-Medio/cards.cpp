@@ -187,17 +187,25 @@ Card& Hand::operator[] (int position) {
 }
 
 void Hand::print_out_hand() {
+	cout << "Your cards: " << endl;
 	for (int i = 0; i < current_hand.size(); i++)
 	{
 		cout << current_hand[i] << endl;
 	}
 }
 
+Card& Hand::last_card() {
+	return current_hand[current_hand.size() - 1];
+}
 
 /* *************************************************
 Player class
 ************************************************* */
 Player::Player(int m=100): money(m) {
 
+}
+
+int Player::get_money() const {
+	return money;
 }
 
