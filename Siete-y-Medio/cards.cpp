@@ -1,24 +1,15 @@
 #include "cards.h"
 #include <cstdlib>
 #include <iostream>
-
-/*
-You might or might not need these two extra libraries
 #include <iomanip>
 #include <algorithm>
-*/
+
 
 
 /* *************************************************
 Card class
 ************************************************* */
-
-/*
-Default constructor for the Card class.
-It could give repeated cards. This is OK.
-Most variations of Blackjack are played with
-several decks of cards at the same time.
-*/
+//Default constructor for the Card class.
 Card::Card() {
 	int r = 1 + rand() % 4;
 	switch (r) {
@@ -44,29 +35,25 @@ Card::Card() {
 	default: break;
 	}
 }
-
-// Accessor: returns a string with the suit of the card in Spanish 
 string Card::get_spanish_suit() const {
 	string suitName;
 	switch (suit) {
 	case OROS:
-		suitName = "oros";
+		suitName = "Oros";
 		break;
 	case COPAS:
-		suitName = "copas";
+		suitName = "Copas";
 		break;
 	case ESPADAS:
-		suitName = "espadas";
+		suitName = "Espadas";
 		break;
 	case BASTOS:
-		suitName = "bastos";
+		suitName = "Bastos";
 		break;
 	default: break;
 	}
 	return suitName;
 }
-
-// Accessor: returns a string with the rank of the card in Spanish 
 string Card::get_spanish_rank() const {
 	string rankName;
 	switch (rank) {
@@ -105,44 +92,112 @@ string Card::get_spanish_rank() const {
 	return rankName;
 }
 
-
-
-// Accessor: returns a string with the suit of the card in English 
-// This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const {
-	return "";
+	string suitName;
+	switch (suit) {
+	case OROS:
+		suitName = "Coins";
+		break;
+	case COPAS:
+		suitName = "Cups";
+		break;
+	case ESPADAS:
+		suitName = "Swords";
+		break;
+	case BASTOS:
+		suitName = "Clubs";
+		break;
+	default: break;
+	}
+	return suitName;
 }
 
-// Accessor: returns a string with the rank of the card in English 
-// This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
-	return "";
+	string rankName;
+	switch (rank) {
+	case AS:
+		rankName = "Ace";
+		break;
+	case DOS:
+		rankName = "Two";
+		break;
+	case TRES:
+		rankName = "Three";
+		break;
+	case CUATRO:
+		rankName = "Four";
+		break;
+	case CINCO:
+		rankName = "Five";
+		break;
+	case SEIS:
+		rankName = "Six";
+		break;
+	case SIETE:
+		rankName = "Seven";
+		break;
+	case SOTA:
+		rankName = "Jack";
+		break;
+	case CABALLO:
+		rankName = "Knight";
+		break;
+	case REY:
+		rankName = "King";
+		break;
+	default: break;
+	}
+	return rankName;
+	
 }
-
-
 
 // Assigns a numerical value to card based on rank.
 // AS=1, DOS=2, ..., SIETE=7, SOTA=10, CABALLO=11, REY=12
 int Card::get_rank() const {
 	return static_cast<int>(rank) + 1;
 }
-
 // Comparison operator for cards
-// Returns TRUE if card1 < card2
 bool Card::operator < (Card card2) const {
 	return rank < card2.rank;
 }
 
-
+std::ostream& operator<<(std::ostream& out, const Card& x) {
+	out << "			" << x.get_spanish_suit() << " of " << x.get_spanish_rank() << "			(" << x.get_english_suit() << " of " << x.get_english_rank();
+}
 
 /* *************************************************
 Hand class
 ************************************************* */
-// Implemente the member functions of the Hand class here.
+Hand::Hand() : total(0) {
 
+}
+
+void Hand::draw_card(){
+	Card newcard;
+	current_hand.push_back(newcard);
+	total += newcard.get_rank();
+}
+
+int Hand::get_total() const {
+	return total;
+}
+
+Card& Hand::operator[] (int position) {
+	return current_hand[position];
+}
+
+void Hand::print_out_hand() {
+	for (int i = 0; i < current_hand.size(); i++)
+	{
+		cout << current_hand[i] << endl;
+	}
+}
 
 
 /* *************************************************
 Player class
 ************************************************* */
-// Implemente the member functions of the Player class here.
+Player::Player(int m=100): money(m) {
+
+}
+
