@@ -20,4 +20,20 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 7. 21st April- Created a new branch called "newbranch". The newbranch branch will concern itself with cleaning up and formatting the cards.h and cards.cpp files. The master branch will concern itself with the readme.md and the formatting of the output in siete-y-medio.cpp. This way we should be able to resolve most conflicts without too many problems. 
 
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
+8. 21st April- Now the two branches will be merged. The last change in the master branch, along with this change (also in the master branch) means that the master branch has moved several commits ahead since the original branching. Which means that this merge will be a Non fast forward merge. 
+
 
