@@ -1,2 +1,3 @@
 ﻿  siete-y-medio.cpp
+d:\siete-y-medio\siete-y-medio\siete-y-medio.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Siete-y-Medio.vcxproj -> D:\Siete-y-Medio\Siete-y-Medio\Debug\Siete-y-Medio.exe

@@ -9,12 +9,13 @@ using namespace std;
 static const int dealers_wallet = 900;
 static const double dealers_threshhold = 5.5;
 int main() {
+	srand(time(NULL));
 	Player user(100);
 	Player computer(dealers_wallet);
 	int game_number = 0; int bet; char answer = 'y'; bool player_bust = false; bool computer_bust = false;
 	while ((user.get_money() > 0) && (computer.get_money() > 0))
 	{
-		++game_number; player_bust = false; player_bust = false;
+		++game_number; player_bust = false; computer_bust = false;
 		cout << "Game Number: " << game_number << endl;
 		//PLAYER'S TURN *****************************************************************************************************
 		cout << "You have " << user.get_money() << "$" << ". Enter bet: ";
@@ -61,20 +62,21 @@ int main() {
 				cout << "Bust!" << endl; computer_bust = true;
 			}
 		}
-		if (player_bust && computer_bust)
+		//EVALUATING RESULT ***********************************************************************************************
+		if (player_bust==true && computer_bust==true)
 		{
 			cout << "House advantage! You lose " << bet << "$" << endl;
 			bet *= -1;
 			user.add_money(bet);
 		}
-		else if (!player_bust &&  computer_bust)
+		else if (player_bust==false &&  computer_bust==true)
 		{
-			cout << "You win " << bet << " $" << endl;
+			cout << "CPU busted and you didn't. You win " << bet << " $"  << endl;
 			user.add_money(bet);
 		}
-		else if (player_bust && !computer_bust)
+		else if (player_bust==true && computer_bust==false)
 		{
-			cout << "You lose " << bet << " $" << endl;
+			cout << "You busted and CPU didn't. You lose " << bet << " $"  << endl;
 			bet *= -1;
 			user.add_money(bet);
 		}
@@ -82,12 +84,12 @@ int main() {
 		{
 			if (user.player_hand.get_total() > computer.player_hand.get_total())
 			{
-				cout << "You win " << bet << " $" << endl;
+				cout << "Neither busted but you have a higher total. You win " << bet << " $"<<  endl;
 				user.add_money(bet);
 			}
 			else if (user.player_hand.get_total() < computer.player_hand.get_total())
 			{
-				cout << "You lose " << bet << " $" << endl;
+				cout << "Neither busted but you have a lower total. You lose " << bet << " $" << endl;
 				user.add_money(-1 * bet);
 			}
 			else
