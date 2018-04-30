@@ -26,7 +26,7 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 10. 23rd April- Finished up coding the corner cases. There seems to be certain problems where the computers hands aren't being randomized but mine are. 
 
-
+11. 24th April- Started a new "Experimental" branch to try and fix a few of the last errors of the project. This current edit to the readme is being done on the master branch however. This means that the following merge will be a THREE WAY MERGE (also a non fast forward merge). With this, the gitignore files and the .vs files that I stopped tracking, I should be eligible for the partial credit. 
 
 
 
