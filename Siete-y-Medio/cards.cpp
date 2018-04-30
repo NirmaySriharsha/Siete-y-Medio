@@ -22,7 +22,7 @@ Card::Card() {
 	case 4: suit = BASTOS; break;
 	default: break;
 	}
-
+	srand(time(NULL));
 	r = 1 + rand() % 10;
 	switch (r) {
 	case  1: rank = AS; break;

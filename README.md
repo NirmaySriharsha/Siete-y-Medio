@@ -24,6 +24,8 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 9. 21st April- Resolved a few merge conflicts and checked to make sure the merge went well. Noticed and fixed a formatting error in the Readme file. Still have to check the code for corner cases and enable it to print a log file of games. 
 
+10. 23rd April- Finished up coding the corner cases. There seems to be certain problems where the computers hands aren't being randomized but mine are. 
+
 
 
 

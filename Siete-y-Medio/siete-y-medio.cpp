@@ -11,10 +11,11 @@ static const double dealers_threshhold = 5.5;
 int main() {
 	Player user(100);
 	Player computer(dealers_wallet);
-	int game_number = 0; int bet; char answer = 'y';
+	int game_number = 0; int bet; char answer = 'y'; bool player_bust = false; bool computer_bust = false;
 	while ((user.get_money() > 0) && (computer.get_money() > 0))
 	{
-		++game_number;
+		++game_number; player_bust = false; player_bust = false;
+		cout << "Game Number: " << game_number << endl;
 		//PLAYER'S TURN *****************************************************************************************************
 		cout << "You have " << user.get_money() << "$" << ". Enter bet: ";
 		cin >> bet;
@@ -23,35 +24,76 @@ int main() {
 		user.player_hand.print_out_hand();
 		cout << "Your total is " << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
 		cin >> answer;
-		while (answer == 'y')			//make sure that the player can't keep drawing cards even after he busts and shit. 
+		while (answer == 'y' && user.player_hand.get_total()<=7.5) 
 		{
 			user.player_hand.draw_card();
 			cout << "New Card: " << endl;
-			cout << user.player_hand.last_card(); cout << endl;
+			cout << user.player_hand.last_card() << endl;
 			cout << "Your cards: " << endl;
 			user.player_hand.print_out_hand();
-			cout << "Your total is " << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
-			cin >> answer;
+			cout << "Your total is " << user.player_hand.get_total() << endl;
+			if (user.player_hand.get_total() > 7.5)
+			{
+				cout << "Bust!" << endl; player_bust = true;
+				break;
+			}
+			else 
+			{
+				cout << ". Do you want to draw another card? (Y/N) ";
+				cin >> answer;
+			}
 		}
 		//COMPUTER'S TURN ***************************************************************************************************
+		computer.player_hand.draw_card();
+		cout << "Dealer's cards: " << endl;
+		computer.player_hand.print_out_hand();
+		cout << "The Dealer's total is " << computer.player_hand.get_total() << endl << endl;
 		while (computer.player_hand.get_total() < dealers_threshhold)
 		{
 			computer.player_hand.draw_card();
+			cout << "New card: " << endl;
+			cout << computer.player_hand.last_card() << endl;
 			cout << "Dealer's cards: " << endl;
 			computer.player_hand.print_out_hand();
-			cout << "The Dealer's total is " << computer.player_hand.get_total() << endl;
+			cout << "The Dealer's total is " << computer.player_hand.get_total() << endl << endl;
+			if (computer.player_hand.get_total() > 7.5)
+			{
+				cout << "Bust!" << endl; computer_bust = true;
+			}
 		}
-		if (user.player_hand.get_total() > computer.player_hand.get_total())
+		if (player_bust && computer_bust)
 		{
-			cout << "You win " << bet << "$ " << endl;
+			cout << "House advantage! You lose " << bet << "$" << endl;
+			bet *= -1;
 			user.add_money(bet);
-			computer.add_money(-1 * bet);
 		}
-		else
+		else if (!player_bust &&  computer_bust)
+		{
+			cout << "You win " << bet << " $" << endl;
+			user.add_money(bet);
+		}
+		else if (player_bust && !computer_bust)
 		{
 			cout << "You lose " << bet << " $" << endl;
 			bet *= -1;
 			user.add_money(bet);
+		}
+		else
+		{
+			if (user.player_hand.get_total() > computer.player_hand.get_total())
+			{
+				cout << "You win " << bet << " $" << endl;
+				user.add_money(bet);
+			}
+			else if (user.player_hand.get_total() < computer.player_hand.get_total())
+			{
+				cout << "You lose " << bet << " $" << endl;
+				user.add_money(-1 * bet);
+			}
+			else
+			{
+				cout << "Draw. No loss or gain " << endl;
+			}
 		}
 		user.player_hand.reset_hand();
 		computer.player_hand.reset_hand();
