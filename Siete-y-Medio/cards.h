@@ -41,8 +41,6 @@ public:
 	// The possible returns are: 1, 2, 3, 4, 5, 6, 7, 10, 11 and 12
 	int get_rank() const;
 	// Compare rank of two cards. E.g: Eight<Jack is true.
-	// Assume Ace is always 1. 
-	// Useful if you want to sort the cards.
 	double get_value() const;
 	bool operator < (Card card2) const;
 	friend std::ostream& operator<<(std::ostream&, const Card&);
@@ -56,12 +54,12 @@ private:
 class Hand {
 public:
 	Hand();
-	void draw_card();
-	double get_total() const;
-	Card& operator[] (int);
-	void print_out_hand();
-	Card& last_card();
-	void reset_hand();
+	void draw_card();					//Draws a card
+	double get_total() const;			//Finds out the total value of the hand
+	Card& operator[] (int);				//Locate specific cards in the hand
+	void print_out_hand();				//Display the hand
+	Card& last_card();					//Locate the last card in the hand
+	void reset_hand();					//Used at the end, to start a new game. 
 private:
 	vector<Card> current_hand;
 	double total;
@@ -71,9 +69,9 @@ private:
 class Player {
 public:
 	Player(int m);
-	int get_money() const;
-	Hand player_hand;
-	void add_money(const int&);
+	int get_money() const;			//Returns the player's wallet
+	Hand player_hand;				//Hand is a public field in order to access the functions that are available in the hand class. Slightly inelegant, but it gets the job done. 
+	void add_money(const int&);		//Adding or subtracting money after a game. 
 private:
 	int money;
 };

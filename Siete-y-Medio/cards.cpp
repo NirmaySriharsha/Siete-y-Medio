@@ -161,12 +161,12 @@ int Card::get_rank() const {
 }
 
 double Card::get_value() const {
-	if ((*this).get_rank() < 10)
+	if ((*this).get_rank() < 10)				//Cards up to Siete have the same value as their ranks
 	{
-		return (*this).get_rank();
+		return (*this).get_rank();				
 	}
 	else
-		return 0.5;
+		return 0.5;								//Cards beyond Siete: Sota, Caballo, Rey, have a value of 0.5
 }
 
 
@@ -175,7 +175,7 @@ bool Card::operator < (Card card2) const {
 	return rank < card2.rank;
 }
 
-std::ostream& operator<<(std::ostream& out, const Card& x) {
+std::ostream& operator<<(std::ostream& out, const Card& x) {	//To print out cards
 	out << "			" << x.get_spanish_suit() << " of " << x.get_spanish_rank() << "			(" << x.get_english_suit() << " of " << x.get_english_rank() << ")";
 	return out;
 }
@@ -183,18 +183,18 @@ std::ostream& operator<<(std::ostream& out, const Card& x) {
 /* *************************************************
 Hand class
 ************************************************* */
-Hand::Hand() : total(0) {
+Hand::Hand() : total(0) {	//initializing a hand with no cards and a total value of 0
 
 }
 
 void Hand::draw_card(){
 	Card newcard;
 	current_hand.push_back(newcard);
-	total += newcard.get_value();
+	total += newcard.get_value();			//Every time we draw a card, our total value must be updated. 
 }
 
 double Hand::get_total() const {
-	return total;
+	return total;							
 }
 
 Card& Hand::operator[] (int position) {
@@ -212,7 +212,7 @@ Card& Hand::last_card() {
 	return current_hand[current_hand.size() - 1];
 }
 
-void Hand::reset_hand() {
+void Hand::reset_hand() {				//Resets the hand by making the hand empty of cards and resetting the total value back to 0. 
 	current_hand = {};
 	total = 0;
 }
