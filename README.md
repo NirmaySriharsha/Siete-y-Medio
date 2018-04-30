@@ -30,38 +30,4 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
 
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
