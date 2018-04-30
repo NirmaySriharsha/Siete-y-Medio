@@ -1,0 +1,13 @@
+******************************************************************************************************
+Game number1			Money left: $ 150
+Bet: $50
+
+Your cards: 
+			Copas of Seis			(Cups of Six)
+Your total: 6
+
+Dealer's cards: 
+			Oros of Tres			(Coins of Three)
+			Bastos of Cinco			(Clubs of Five)
+Dealer's total is 8
+******************************************************************************************************

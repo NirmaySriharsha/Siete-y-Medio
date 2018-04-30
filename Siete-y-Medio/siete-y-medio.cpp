@@ -14,7 +14,7 @@ int main() {
 	Player computer(dealers_wallet);
 	int game_number = 0; int bet; char answer = 'y'; bool player_bust = false; bool computer_bust = false;
 	ofstream fout;
-	fout.open("Gamelog.txt", ios::out|ios::trunc);
+	fout.open("Gamelog.txt", ios::out);
 	while ((user.get_money() > 0) && (computer.get_money() > 0))
 	{
 		++game_number; player_bust = false; computer_bust = false;
@@ -99,7 +99,7 @@ int main() {
 
 		}
 		//WRITING GAMELOG FILE *************************************************************************************
-		fout.open("Gamelog.txt", ios::app);
+		fout("Gamelog.txt", ios::out);
 		fout << "******************************************************************************************************" << endl;
 		fout << "Game number" << game_number << "			Money left: $ " << user.get_money() << endl;
 		fout << "Bet: $" << bet << endl << endl;
