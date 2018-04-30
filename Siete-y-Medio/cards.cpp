@@ -1,5 +1,6 @@
 #include "cards.h"
 #include <cstdlib>
+#include <stdlib.h>
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
@@ -11,6 +12,8 @@ Card class
 ************************************************* */
 //Default constructor for the Card class.
 Card::Card() {
+	srand(time(NULL));
+
 	int r = 1 + rand() % 4;
 	switch (r) {
 	case 1: suit = OROS; break;
