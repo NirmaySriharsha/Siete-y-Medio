@@ -18,4 +18,6 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 
 6. 20th April- I made a bunch of commits trying to fix a problem with certain files from the visual studio IDE, that were being modified everytime I opened the project, even though I made no change to the files itself. In the end I could not fix the problem, but I updated the gitignore files to deal with SOME of the problems. The rest don't seem to be fatal and don't affect the major files so I'll let them be. 
 
+7. 21st April- Created a new branch called "newbranch". The newbranch branch will concern itself with cleaning up and formatting the cards.h and cards.cpp files. The master branch will concern itself with the readme.md and the formatting of the output in siete-y-medio.cpp. This way we should be able to resolve most conflicts without too many problems. 
+
 

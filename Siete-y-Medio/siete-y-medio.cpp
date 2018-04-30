@@ -21,7 +21,7 @@ int main() {
 		user.player_hand.draw_card();
 		cout << "Your cards: " << endl;
 		user.player_hand.print_out_hand();
-		cout << "Your total is" << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
+		cout << "Your total is " << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
 		cin >> answer;
 		while (answer == 'y')			//make sure that the player can't keep drawing cards even after he busts and shit. 
 		{
@@ -30,7 +30,7 @@ int main() {
 			cout << user.player_hand.last_card(); cout << endl;
 			cout << "Your cards: " << endl;
 			user.player_hand.print_out_hand();
-			cout << "Your total is" << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
+			cout << "Your total is " << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
 			cin >> answer;
 		}
 		//COMPUTER'S TURN ***************************************************************************************************
@@ -39,15 +39,17 @@ int main() {
 			computer.player_hand.draw_card();
 			cout << "Dealer's cards: " << endl;
 			computer.player_hand.print_out_hand();
-			cout << "The Dealer's total is " << computer.player_hand.get_total();
+			cout << "The Dealer's total is " << computer.player_hand.get_total() << endl;
 		}
 		if (user.player_hand.get_total() > computer.player_hand.get_total())
 		{
+			cout << "You win " << bet << "$ " << endl;
 			user.add_money(bet);
 			computer.add_money(-1 * bet);
 		}
 		else
 		{
+			cout << "You lose " << bet << " $" << endl;
 			bet *= -1;
 			user.add_money(bet);
 		}
