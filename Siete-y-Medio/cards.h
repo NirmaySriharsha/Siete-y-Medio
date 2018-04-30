@@ -57,7 +57,7 @@ public:
 	void draw_card();					//Draws a card
 	double get_total() const;			//Finds out the total value of the hand
 	Card& operator[] (int);				//Locate specific cards in the hand
-	void print_out_hand();				//Display the hand
+	void print_out_hand(std::ostream& out);				//Display the hand
 	Card& last_card();					//Locate the last card in the hand
 	void reset_hand();					//Used at the end, to start a new game. 
 private:

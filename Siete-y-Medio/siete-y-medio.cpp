@@ -13,6 +13,8 @@ int main() {
 	Player user(100);
 	Player computer(dealers_wallet);
 	int game_number = 0; int bet; char answer = 'y'; bool player_bust = false; bool computer_bust = false;
+	ofstream fout;
+	fout.open("Gamelog.txt", ios::out|ios::trunc);
 	while ((user.get_money() > 0) && (computer.get_money() > 0))
 	{
 		++game_number; player_bust = false; computer_bust = false;
@@ -22,7 +24,7 @@ int main() {
 		cin >> bet;
 		user.player_hand.draw_card();
 		cout << "Your cards: " << endl;
-		user.player_hand.print_out_hand();
+		user.player_hand.print_out_hand(cout);
 		cout << "Your total is " << user.player_hand.get_total() << ". Do you want to draw another card? (Y/N) ";
 		cin >> answer;
 		while (answer == 'y' && user.player_hand.get_total()<=7.5) 
@@ -31,7 +33,7 @@ int main() {
 			cout << "New Card: " << endl;
 			cout << user.player_hand.last_card() << endl;
 			cout << "Your cards: " << endl;
-			user.player_hand.print_out_hand();
+			user.player_hand.print_out_hand(cout);
 			cout << "Your total is " << user.player_hand.get_total() << endl;
 			if (user.player_hand.get_total() > 7.5)
 			{
@@ -47,7 +49,7 @@ int main() {
 		//COMPUTER'S TURN ***************************************************************************************************
 		computer.player_hand.draw_card();
 		cout << "Dealer's cards: " << endl;
-		computer.player_hand.print_out_hand();
+		computer.player_hand.print_out_hand(cout);
 		cout << "The Dealer's total is " << computer.player_hand.get_total() << endl << endl;
 		while (computer.player_hand.get_total() < dealers_threshhold)
 		{
@@ -55,7 +57,7 @@ int main() {
 			cout << "New card: " << endl;
 			cout << computer.player_hand.last_card() << endl;
 			cout << "Dealer's cards: " << endl;
-			computer.player_hand.print_out_hand();
+			computer.player_hand.print_out_hand(cout);
 			cout << "The Dealer's total is " << computer.player_hand.get_total() << endl << endl;
 			if (computer.player_hand.get_total() > 7.5)
 			{
@@ -66,8 +68,7 @@ int main() {
 		if (player_bust==true && computer_bust==true)
 		{
 			cout << "House advantage! You lose " << bet << "$" << endl;
-			bet *= -1;
-			user.add_money(bet);
+			user.add_money(bet*-1);
 		}
 		else if (player_bust==false &&  computer_bust==true)
 		{
@@ -77,8 +78,7 @@ int main() {
 		else if (player_bust==true && computer_bust==false)
 		{
 			cout << "You busted and CPU didn't. You lose " << bet << " $"  << endl;
-			bet *= -1;
-			user.add_money(bet);
+			user.add_money(bet*-1);
 		}
 		else
 		{
@@ -96,9 +96,25 @@ int main() {
 			{
 				cout << "Draw. No loss or gain " << endl;
 			}
+
 		}
+		//WRITING GAMELOG FILE *************************************************************************************
+		fout.open("Gamelog.txt", ios::app);
+		fout << "******************************************************************************************************" << endl;
+		fout << "Game number" << game_number << "			Money left: $ " << user.get_money() << endl;
+		fout << "Bet: $" << bet << endl << endl;
+		fout << "Your cards: " << endl;
+		user.player_hand.print_out_hand(fout);
+		fout << "Your total: " << user.player_hand.get_total() << endl << endl;
+		fout << "Dealer's cards: " << endl;
+		computer.player_hand.print_out_hand(fout);
+		fout << "Dealer's total is " << computer.player_hand.get_total() << endl;
+		fout << "******************************************************************************************************" << endl;
+		fout.close();
+		//RESET GAME **************************************************************************************************
 		user.player_hand.reset_hand();
 		computer.player_hand.reset_hand();
+
 	}
 	return 0;
 }

@@ -200,10 +200,10 @@ Card& Hand::operator[] (int position) {
 	return current_hand[position];
 }
 
-void Hand::print_out_hand() {
+void Hand::print_out_hand(std::ostream& out= cout) {
 	for (int i = 0; i < current_hand.size(); i++)
 	{
-		cout << current_hand[i] << endl;
+		out << current_hand[i] << endl;
 	}
 }
 
