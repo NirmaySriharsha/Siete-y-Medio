@@ -1,2 +1,6 @@
-﻿  siete-y-medio.cpp
+﻿  cards.cpp
+d:\siete-y-medio\siete-y-medio\cards.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\siete-y-medio\siete-y-medio\cards.cpp(205): warning C4018: '<': signed/unsigned mismatch
+  siete-y-medio.cpp
+  Generating Code...
   Siete-y-Medio.vcxproj -> D:\Siete-y-Medio\Siete-y-Medio\Debug\Siete-y-Medio.exe
