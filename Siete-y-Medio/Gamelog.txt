@@ -1,34 +1,36 @@
 ******************************************************************************************************
-Game number1			Money left: $ 50
-Bet: $50
+Game number1			Money left: $ 200
+Bet: $100
 
 Your cards: 
-			Espadas of Caballo			(Swords of Knight)
-			Copas of As			(Cups of Ace)
-			Copas of Sota			(Cups of Jack)
-			Espadas of Dos			(Swords of Two)
-			Espadas of Rey			(Swords of King)
-			Bastos of Sota			(Clubs of Jack)
-			Oros of Cuatro			(Coins of Four)
-Your total: 9
+			Bastos of As			(Clubs of Ace)
+			Copas of Rey			(Cups of King)
+			Espadas of Tres			(Swords of Three)
+			Bastos of Tres			(Clubs of Three)
+Your total: 7.5
 
 Dealer's cards: 
-			Espadas of Cinco			(Swords of Five)
-			Bastos of Dos			(Clubs of Two)
-Dealer's total is 7
+			Bastos of Rey			(Clubs of King)
+			Copas of Caballo			(Cups of Knight)
+			Bastos of Cinco			(Clubs of Five)
+Dealer's total is 6
 ******************************************************************************************************
 ******************************************************************************************************
 Game number2			Money left: $ 0
-Bet: $50
+Bet: $200
 
 Your cards: 
-			Copas of Dos			(Cups of Two)
-			Bastos of Cuatro			(Clubs of Four)
-Your total: 6
+			Oros of Sota			(Coins of Jack)
+			Espadas of Cuatro			(Swords of Four)
+			Oros of Caballo			(Coins of Knight)
+			Oros of Rey			(Coins of King)
+			Copas of Cuatro			(Cups of Four)
+Your total: 9.5
 
 Dealer's cards: 
-			Copas of Caballo			(Cups of Knight)
-			Espadas of Sota			(Swords of Jack)
-			Bastos of Seis			(Clubs of Six)
-Dealer's total is 7
+			Oros of As			(Coins of Ace)
+			Espadas of Caballo			(Swords of Knight)
+			Espadas of As			(Swords of Ace)
+			Bastos of Cinco			(Clubs of Five)
+Dealer's total is 7.5
 ******************************************************************************************************
