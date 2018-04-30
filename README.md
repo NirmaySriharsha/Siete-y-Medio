@@ -31,3 +31,5 @@ For the first PIC10C assignment, we will be coding the game of Siete-y-medio!
 12. 26th April- Created a new branch "Creating a gamelog". I have not updated the master branch which means the merge can be a fast forward one. However, for the sake of mixing it up, we'll do a non-fast forward branch (which is not three way). Also managed to make the program print out gamelogs in seperate files. The program is fully functional. Finally, I updated gitignore to ignore changes to the game log. 
 
 
+13. FINAL REMARK: As you might have noticed, certain binary files are still being needlessly tracked and updated at each commit. I did in fact stop tracking many other binary files, but I kept these in the end because a)I wasn't completely able to gitignore them, and b)Upon looking online, several people recomended that these feels are better off not ignored in case of certain emergencies. Thus, I haven't git rm or stopped tracking these particular binary files.  
+
