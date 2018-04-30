@@ -99,7 +99,6 @@ int main() {
 
 		}
 		//WRITING GAMELOG FILE *************************************************************************************
-		fout("Gamelog.txt", ios::out);
 		fout << "******************************************************************************************************" << endl;
 		fout << "Game number" << game_number << "			Money left: $ " << user.get_money() << endl;
 		fout << "Bet: $" << bet << endl << endl;
@@ -110,11 +109,12 @@ int main() {
 		computer.player_hand.print_out_hand(fout);
 		fout << "Dealer's total is " << computer.player_hand.get_total() << endl;
 		fout << "******************************************************************************************************" << endl;
-		fout.close();
+		
 		//RESET GAME **************************************************************************************************
 		user.player_hand.reset_hand();
 		computer.player_hand.reset_hand();
 
 	}
+	fout.close();
 	return 0;
 }
